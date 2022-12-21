@@ -4,8 +4,12 @@ import logo from '../../assets/logo.svg'
 import styles from './auth.module.scss'
 import LoginForm from './components/LoginForm/LoginForm'
 import RegisterForm from './components/RegisterForm/RegisterForm'
+import { setTitle } from '../../utils/'
 
 const Auth: FC<{href: string}> = ({href}) => {
+
+  setTitle(href === 'register' ? 'Register' : 'Login')
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.inner}>
