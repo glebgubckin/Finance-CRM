@@ -1,0 +1,111 @@
+@import '../../../styles/var';
+
+@mixin flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin link {
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  color: $secondary;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper {
+  margin: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.inner {
+  margin-bottom: 40px;
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.widgets {
+  width: 100%;
+  @include flex;
+}
+
+.recent {
+  margin-top: 30px;
+  padding: 20px 24px;
+  width: 100%;
+  border: 1px #F5F5F5 solid;
+  border-radius: 12px;
+
+  &__controls {
+    @include flex;
+  }
+
+  &__title {
+    font-size: 24px;
+    font-weight: 600;
+    color: $font-color;
+  }
+
+  &__link {
+    @include link;
+  }
+
+  &__table {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 960px;
+  }
+
+  thead {
+    color: #929EAE;
+  }
+}
+
+.side {
+  width: 100%;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: $font-color;
+  }
+}
+
+.transfers {
+  width: 100%;
+  max-width: 460px;
+
+  &__info {
+    margin-top: 30px;
+    margin-bottom: 8px;
+    @include flex;
+
+    & > p {
+      font-size: 24px;
+      font-weight: 600;
+      color: $font-color;
+    }
+  }
+
+  &__link {
+    @include link;
+  }
+}
+
+@media screen and (max-width: 1840px) {
+  .wrapper {
+    flex-direction: column;
+  }
+}

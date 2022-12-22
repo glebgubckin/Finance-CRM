@@ -1,7 +1,7 @@
 import { atom } from "recoil"
 
-export const app = atom({
-  key: 'app',
+export const appStore = atom({
+  key: 'appStore',
   default: {
     darkMode: false,
     navTitle: 'Dashboard',

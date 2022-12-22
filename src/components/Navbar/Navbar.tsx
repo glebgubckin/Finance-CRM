@@ -1,13 +1,13 @@
 import { FC } from 'react'
 import { useRecoilState } from 'recoil'
-import { app } from '../../stores/appStore'
+import { appStore } from '../../stores/appStore'
 import { FiBell } from "react-icons/fi";
 import styles from './navbar.module.scss'
 import UserDropdown from '../UserDropdown/UserDropdown';
 
 const Navbar: FC = () => {
 
-  const [appState, setAppState] = useRecoilState(app)
+  const [appState, setAppState] = useRecoilState(appStore)
 
   return (
     <div className={styles.wrapper}>
