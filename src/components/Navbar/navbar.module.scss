@@ -1,0 +1,40 @@
+@import '../../styles/var';
+
+.wrapper {
+  padding: 30px 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: $font-color;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.notifications {
+  position: relative;
+}
+
+.icon {
+  background: none;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+}
+
+.count {
+  padding: 4px 8px;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 10px;
+  background-color: #E11D48;
+  color: #ffffff;
+  border-radius: 12px;
+}

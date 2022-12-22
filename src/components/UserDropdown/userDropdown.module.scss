@@ -1,0 +1,29 @@
+@import '../../styles/var';
+
+.wrapper {
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  padding: 8px;
+  background-color: #FAFAFA;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  & > span {
+    font-weight: 600;
+    margin-left: 12px;
+    color: $font-color;
+  }
+}
+
+.drop {
+  margin-left: 28px;
+  background: none;
+  outline: 0;
+  border: none;
+}
