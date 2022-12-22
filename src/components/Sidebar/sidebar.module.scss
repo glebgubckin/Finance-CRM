@@ -1,0 +1,44 @@
+@import '../../styles/var';
+
+.wrapper {
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 300px;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #FAFAFA;
+}
+
+.nav {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.link {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 20px;
+  color: #929EAE;
+  text-decoration: none;
+  transition: .15s all;
+
+  &__active {
+    background-color: $primary;
+    color: $font-color;
+  }
+
+  & > svg {
+    margin-right: 12px;
+
+    &:hover {
+      color: $font-color;
+    }
+  }
+}

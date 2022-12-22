@@ -5,7 +5,7 @@ import AuthLayout from './layouts/AuthLayout'
 
 const App: FC = () => {
 
-  const isAuth = false
+  const isAuth = true
 
   return (
     <Router>
