@@ -1,6 +1,7 @@
 @import '../../styles/var';
 
 .wrapper {
+  position: relative;
   margin-left: 50px;
   display: flex;
   flex-direction: column;
@@ -18,6 +19,7 @@
     font-weight: 600;
     margin-left: 12px;
     color: $font-color;
+    user-select: none;
   }
 }
 
@@ -27,4 +29,68 @@
   outline: 0;
   border: none;
   cursor: pointer;
+  transition: .2s all;
+
+  &__active {
+    transform: rotate(180deg)
+  }
+}
+
+.bottom {
+  padding: 8px;
+  width: 100%;
+  position: absolute;
+  margin-top: 60px;
+  background-color: #FAFAFA;
+  border-radius: 12px;
+  user-select: none;
+
+  &__show {
+    animation: display .25s;
+    display: block;
+  }
+
+  &__hide {
+    animation: hide .25s;
+    display: none;
+  }
+}
+
+.switch {
+  padding: 12px 0;
+  width: 100%;
+  background-color: $primary;
+  border: none;
+  border-radius: 24px;
+  outline: 0;
+  color: $font-color;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .15s all;
+
+  &:hover {
+    color: #ffffff;
+    background-color: $secondary;
+  }
+}
+
+@keyframes display {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }

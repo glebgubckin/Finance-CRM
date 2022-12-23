@@ -14,7 +14,7 @@ const Transfer: FC<TransferProps> = ({person, date, amount}) => {
         <p className={styles.name}>{person}</p>
         <p className={styles.date}>{date}</p>
       </div>
-      <p className={styles.amount}>-${amount}</p>
+      <p className={styles.amount}>- ${amount}</p>
     </div>
   )
 }

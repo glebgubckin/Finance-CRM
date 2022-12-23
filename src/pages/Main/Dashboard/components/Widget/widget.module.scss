@@ -6,12 +6,17 @@
   align-items: center;
   border-radius: 12px;
   background-color: #363A3F;
+
+  & > img {
+    user-select: none;
+  }
 }
 .info {
   margin-left: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  user-select: none;
 }
 
 .title {
