@@ -1,12 +1,14 @@
-import { atom } from "recoil";
+import { atom } from "recoil"
 
+const user = localStorage.getItem('user')
+const currentUser = user ? JSON.parse(user) : {}
 
 export const userStore = atom({
   key: 'userStore',
   default: {
-    firstName: 'Gleb',
-    lastName: 'Gubkin',
-    email: 'glebgubckin@bk.ru',
-    phone: '+79246843875'
+    firstName: currentUser.firstName,
+    lastName: currentUser.lastName,
+    email: currentUser.email,
+    phone: currentUser.phone
   }
 })

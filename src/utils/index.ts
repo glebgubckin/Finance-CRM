@@ -1,7 +1,12 @@
-export const setTitle = (title: string) => document.title = title
+import { updateProfile, updateValidate } from './profile'
+import { currentDate, currentMonth } from './chartsData'
 
-const months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+const setTitle = (title: string) => document.title = title
 
-export const currentDate = new Date().getDate()
-const currentMonthNumber = new Date().getMonth()
-export const currentMonth = months[currentMonthNumber].slice(0, 3)
+export {
+  setTitle,
+  currentDate,
+  currentMonth,
+  updateProfile,
+  updateValidate
+}

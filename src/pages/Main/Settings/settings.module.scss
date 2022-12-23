@@ -72,6 +72,17 @@
   cursor: pointer;
   transition: .15s;
 
+  &:disabled {
+    color: #f7f7f7;
+    background-color: #dddddd;
+    cursor: default;
+
+    &:hover {
+      color: #f7f7f7;
+      background-color: #dddddd;
+    }
+  }
+
   &:hover {
     background-color: $primary;
     color: $font-color;

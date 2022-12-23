@@ -1,10 +1,10 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, MouseEvent, useEffect, useState } from 'react'
 import { FiEdit3 } from 'react-icons/fi'
 import Input from './components/Input/Input'
 import { useRecoilState } from 'recoil'
-import { setTitle } from '../../../utils/index'
 import { appStore } from '../../../stores/appStore'
 import { userStore } from '../../../stores/userStore'
+import { setTitle, updateProfile, updateValidate } from '../../../utils/index'
 import styles from './settings.module.scss'
 
 export interface Form {
@@ -12,8 +12,8 @@ export interface Form {
   lastName: string,
   email: string,
   phone: string,
-  newPassword?: string,
-  confirmNewPassword?: string
+  newPassword: string,
+  confirmNewPassword: string
 }
 
 const Settings: FC = () => {
@@ -32,10 +32,18 @@ const Settings: FC = () => {
     newPassword: '',
     confirmNewPassword: ''
   })
+
+  const update = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    updateProfile(form)
+    setUserState({...form})
+    setForm({...form, newPassword: '', confirmNewPassword: ''})
+    setEdit(false)
+  }
   
   useEffect(() => {
     setAppState({...appState, navTitle: `Settings`})
-    setForm({...userState})
+    setForm({...userState, newPassword: '', confirmNewPassword: ''})
   }, [])
 
   return (
@@ -93,7 +101,7 @@ const Settings: FC = () => {
             type="password"
             disabled={!edit}
             label='New Password'
-            value={form.newPassword ? form.newPassword : ''}
+            value={form.newPassword}
             formData={form}
             field='newPassword'
             setValue={setForm}
@@ -102,13 +110,13 @@ const Settings: FC = () => {
             type="password"
             disabled={!edit}
             label='Confirm Password'
-            value={form.confirmNewPassword ? form.confirmNewPassword : ''}
+            value={form.confirmNewPassword}
             formData={form}
             field='confirmNewPassword'
             setValue={setForm}
           />
         </form>
-        { edit && <button className={styles.update}>Update</button> }
+        { edit && <button disabled={updateValidate(form.newPassword, form.confirmNewPassword)} onClick={(e: MouseEvent<HTMLButtonElement>) => update(e)} className={styles.update}>Update</button> }
     </div>
   )
 }
