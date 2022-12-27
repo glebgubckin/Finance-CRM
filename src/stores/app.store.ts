@@ -1,6 +1,6 @@
 import { atom } from "recoil"
 
-export const appStore = atom({
+const appStore = atom({
   key: 'appStore',
   default: {
     darkMode: false,
@@ -8,3 +8,5 @@ export const appStore = atom({
     notificationsCount: 0
   }
 })
+
+export default appStore 

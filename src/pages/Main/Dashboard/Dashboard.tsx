@@ -7,16 +7,25 @@ import wallet from '../../../assets/wallet.svg'
 import wallet2 from '../../../assets/wallet2.svg'
 import { useRecoilState } from 'recoil'
 import { setTitle } from '../../../utils/index'
-import { appStore } from '../../../stores/appStore'
+import { appStore, walletStore } from '../../../stores/'
 import { Link } from 'react-router-dom'
-import styles from './dashboard.module.scss'
 import Card from './components/Card/Card'
 import Transfer from './components/Transfer/Transfer'
+import styles from './dashboard.module.scss'
 
 const Dashboard: FC = () => {
 
   setTitle('Dashboard')
   const [appState, setAppState] = useRecoilState(appStore)
+  const [walletState, setWalletState] = useRecoilState(walletStore)
+
+  const transfers = [
+    { id: 0, person: 'Saleh Ahmed', date: 'December 21, 2022 at 01:36', amount: 435 },
+    { id: 1, person: 'Delowar Hossain', date: 'December 19, 2022 at 11:58', amount: 132 },
+    { id: 2, person: 'Moinul Hasan Nayem', date: 'December 17, 2022 at 09:46', amount: 826 },
+    { id: 3, person: 'Dr. Jubed Ahmed', date: 'December 16, 2022 at 12:15', amount: 246 },
+    { id: 4, person: 'Jakir Alp', date: 'December 14, 2022 at 13:28', amount: 195 }
+  ]
   
   useEffect(() => {
     setAppState({...appState, navTitle: 'Dashboard'})
@@ -76,7 +85,7 @@ const Dashboard: FC = () => {
       </div>
       <div className={styles.side}>
         <span className={styles.side__title}>Wallet</span>
-        <Card personalNumbers='5495 7381 3759 2321' expirationDate='09/25' />
+        <Card personalNumbers={walletState[0].number} expirationDate={walletState[0].expDate} />
         <div className={styles.transfers}>
           <div className={styles.transfers__info}>
             <p>Scheduled Transfers</p>
@@ -85,11 +94,11 @@ const Dashboard: FC = () => {
               <FiChevronRight color='29A073' size={16} />
             </Link>
           </div>
-          <Transfer person="Saleh Ahmed" date="December 21, 2022 at 01:36" amount={435} />
-          <Transfer person="Delowar Hossain" date="December 19, 2022 at 11:58" amount={132} />
-          <Transfer person="Moinul Hasan Nayem" date="December 17, 2022 at 09:46" amount={826} />
-          <Transfer person="Dr. Jubed Ahmed" date="December 16, 2022 at 12:15" amount={246} />
-          <Transfer person="AR. Jakir Alp" date="December 14, 2022 at 13:28" amount={195} />
+          {
+            transfers.map(t => {
+              return <Transfer key={t.id} person={t.person} date={t.date} amount={t.amount} />
+            })
+          }
         </div>
       </div>
     </div>

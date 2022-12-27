@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useRecoilState } from 'recoil'
-import { appStore } from '../../stores/appStore'
+import { appStore } from '../../stores'
 import { FiBell } from "react-icons/fi";
 import styles from './navbar.module.scss'
 import UserDropdown from '../UserDropdown/UserDropdown';

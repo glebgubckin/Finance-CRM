@@ -1,7 +1,7 @@
 import { FC, useEffect } from 'react';
 import { useRecoilState } from 'recoil'
 import { setTitle } from '../../../utils/index'
-import { appStore } from '../../../stores/appStore'
+import { appStore } from '../../../stores'
 
 const Invoices: FC = () => {
 

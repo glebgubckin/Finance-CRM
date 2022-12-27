@@ -3,7 +3,7 @@ import userImg from '../../assets/user.png'
 import { FiChevronDown } from "react-icons/fi"
 import styles from './userDropdown.module.scss'
 import { useRecoilState } from 'recoil';
-import { userStore } from '../../stores/userStore';
+import { userStore } from '../../stores/'
 
 const UserDropdown: FC = () => {
 
