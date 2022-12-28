@@ -10,7 +10,7 @@ lerna-debug.log*
 node_modules
 build
 build-ssr
-./coverage
+coverage
 *.local
 
 # Editor directories and files
