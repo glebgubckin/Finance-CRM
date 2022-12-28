@@ -7,7 +7,7 @@ import UserDropdown from '../UserDropdown/UserDropdown';
 
 const Navbar: FC = () => {
 
-  const [appState, setAppState] = useRecoilState(appStore)
+  const [appState] = useRecoilState(appStore)
 
   return (
     <div className={styles.wrapper}>

@@ -1,5 +1,5 @@
-import { FC, useRef, useState, ChangeEvent } from 'react';
-import { FiCheck } from "react-icons/fi"
+import { FC, useRef, useState, ChangeEvent } from 'react'
+// import { FiCheck } from "react-icons/fi"
 import styles from '../form.module.scss'
 
 interface ILoggingUser {

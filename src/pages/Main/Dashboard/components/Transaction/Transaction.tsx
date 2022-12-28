@@ -10,7 +10,7 @@ interface TransactionProps {
   date: string
 }
 
-const Transaction: FC<TransactionProps> = ({img, name, company, type, amount, date}) => {
+const Transaction: FC<TransactionProps> = ({name, company, type, amount, date}) => {
   return (
     <tr className={styles.wrapper}>
       <th className={styles.good} align='left'>

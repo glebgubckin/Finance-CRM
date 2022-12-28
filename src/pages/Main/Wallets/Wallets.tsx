@@ -12,7 +12,7 @@ const Wallets: FC = () => {
   setTitle('My Wallets')
   const balance = 5240
   const [appState, setAppState] = useRecoilState(appStore)
-  const [walletState, setWalletState] = useRecoilState(walletStore)
+  const [walletState] = useRecoilState(walletStore)
 
   const payments = [
     { id: 0, title: 'Payoneer', date: '20 Dec 2022, 06:55', price: 4800.24 },

@@ -7,7 +7,7 @@ import { userStore } from '../../stores/'
 
 const UserDropdown: FC = () => {
 
-  const [user, setUser] = useRecoilState(userStore)
+  const [user] = useRecoilState(userStore)
   const [open, setOpen] = useState(false)
 
   return (

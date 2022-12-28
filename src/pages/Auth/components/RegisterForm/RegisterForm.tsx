@@ -1,4 +1,4 @@
-import { ChangeEvent, FC, useRef, useState } from 'react';
+import { ChangeEvent, FC, useState } from 'react';
 import styles from '../form.module.scss'
 
 interface ICreatingUser {
@@ -9,7 +9,7 @@ interface ICreatingUser {
 
 const RegisterForm: FC = () => {
 
-  const remember = useRef<HTMLInputElement>(null)
+  // const remember = useRef<HTMLInputElement>(null)
 
   const [creatingUser, setCreatingUser] = useState<ICreatingUser>({
     fullName: '',

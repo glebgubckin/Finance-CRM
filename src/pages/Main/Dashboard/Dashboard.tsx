@@ -17,7 +17,7 @@ const Dashboard: FC = () => {
 
   setTitle('Dashboard')
   const [appState, setAppState] = useRecoilState(appStore)
-  const [walletState, setWalletState] = useRecoilState(walletStore)
+  const [walletState] = useRecoilState(walletStore)
 
   const transfers = [
     { id: 0, person: 'Saleh Ahmed', date: 'December 21, 2022 at 01:36', amount: 435 },
