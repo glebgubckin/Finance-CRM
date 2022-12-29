@@ -63,6 +63,7 @@ const Dashboard: FC = () => {
                 transactions.slice(0, 3).map(t => {
                   return (
                     <Transaction
+                      key={t.invoiceId}
                       name={t.name}
                       company={t.company}
                       type={t.type}

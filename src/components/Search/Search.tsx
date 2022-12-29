@@ -1,4 +1,4 @@
-import { ChangeEvent, Dispatch, FC, HTMLAttributes, SetStateAction } from 'react'
+import { ChangeEvent, Dispatch, FC, SetStateAction } from 'react'
 import { FiSearch } from 'react-icons/fi'
 import styles from './search.module.scss'
 

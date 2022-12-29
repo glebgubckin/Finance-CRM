@@ -7,10 +7,6 @@ interface IModal {
   children: ReactNode | ReactNode[] | string
 }
 
-interface ITitle extends HTMLAttributes<HTMLParagraphElement> {
-  title: string
-}
-
 const Modal: FC<IModal> = ({open, setOpen, children}) => {
   return (
     <>
