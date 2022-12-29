@@ -9,18 +9,14 @@ interface IModal {
 
 const Modal: FC<IModal> = ({open, setOpen, children}) => {
   return (
-    <>
-      { open &&
-        <div 
-          className={styles.wrapper} 
-          onClick={() => setOpen(false)}
-        >
-          <div className={styles.inner} onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
-            {children}
-          </div>
-        </div>
-      }
-    </>
+    <div 
+      className={open ? `${styles.wrapper} ${styles.active}` : styles.wrapper} 
+      onClick={() => setOpen(false)}
+    >
+      <div className={styles.inner} onClick={(e: MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>
   )
 }
 

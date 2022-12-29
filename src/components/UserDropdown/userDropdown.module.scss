@@ -44,15 +44,11 @@
   background-color: #FAFAFA;
   border-radius: 12px;
   user-select: none;
+  opacity: 0;
+  transition: .2s;
 
-  &__show {
-    animation: display .25s;
-    display: block;
-  }
-
-  &__hide {
-    animation: hide .25s;
-    display: none;
+  &__active {
+    opacity: 1;
   }
 }
 
@@ -72,25 +68,5 @@
   &:hover {
     color: #ffffff;
     background-color: $secondary;
-  }
-}
-
-@keyframes display {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes hide {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
   }
 }

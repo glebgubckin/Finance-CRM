@@ -19,7 +19,7 @@ const UserDropdown: FC = () => {
           <FiChevronDown color='1B212D' size={20} />
         </button>
       </div>
-      <div className={open ? `${styles.bottom} ${styles.bottom__show}` : `${styles.bottom} ${styles.bottom__hide}`}>
+      <div className={open ? `${styles.bottom} ${styles.bottom__active}` : styles.bottom}>
         <button className={styles.switch}>Switch account</button>
       </div>
     </div>
