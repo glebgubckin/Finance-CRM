@@ -4,15 +4,15 @@
 - React + Typescript
 - Recoil js (State Manager)
 - Sass with modules
-- Vitest for test
+- Vitest for tests (with Testing Library for React tests)
 
 ### To do
 1. Страницы (верстка)
 - [x]  Главная страница
-- [ ]  Страница переводов
 - [ ]  Страница счетов
 - [ ]  Страница конкретного счета
 - [x]  Страница баланса
+- [x]  Страница переводов
 - [x]  Страница настроек
 2. Тесты
 - [ ] React компонентов
