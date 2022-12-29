@@ -1,6 +1,6 @@
 import { FC } from 'react'
+import { ITransactions } from '../../../../../stores/transaction.store'
 import { convertMoney } from '../../../../../utils'
-import { ITransactions } from '../../transactions.data'
 import styles from './transaction.module.scss'
 
 const Transaction: FC<{transaction: ITransactions}> = ({transaction}) => {

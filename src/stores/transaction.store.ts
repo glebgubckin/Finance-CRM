@@ -1,6 +1,6 @@
 import { atom } from 'recoil'
 
-interface ITransactions {
+export interface ITransactions {
   name: string,
   company: string,
   type: string,
