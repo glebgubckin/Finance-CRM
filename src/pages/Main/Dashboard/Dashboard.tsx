@@ -3,11 +3,11 @@ import Widget from './components/Widget/Widget'
 import Chart from './components/Chart/Chart'
 import Transaction from './components/Transaction/Transaction'
 import { FiChevronRight } from "react-icons/fi"
-import wallet from '../../../assets/wallet.svg'
-import wallet2 from '../../../assets/wallet2.svg'
+import walletIcon from '../../../assets/wallet.svg'
+import walletIcon2 from '../../../assets/wallet2.svg'
 import { useRecoilState } from 'recoil'
 import { setTitle } from '../../../utils/index'
-import { appStore, walletStore } from '../../../stores/'
+import { appStore, walletStore, transactionStore } from '../../../stores/'
 import { Link } from 'react-router-dom'
 import Card from '../../../components/Card/Card'
 import Transfer from './components/Transfer/Transfer'
@@ -16,8 +16,9 @@ import styles from './dashboard.module.scss'
 const Dashboard: FC = () => {
 
   setTitle('Dashboard')
-  const [appState, setAppState] = useRecoilState(appStore)
-  const [walletState] = useRecoilState(walletStore)
+  const [app, setApp] = useRecoilState(appStore)
+  const [wallet] = useRecoilState(walletStore)
+  const [transactions] = useRecoilState(transactionStore)
 
   const transfers = [
     { id: 0, person: 'Saleh Ahmed', date: 'December 21, 2022 at 01:36', amount: 435 },
@@ -28,16 +29,16 @@ const Dashboard: FC = () => {
   ]
   
   useEffect(() => {
-    setAppState({...appState, navTitle: 'Dashboard'})
+    setApp({...app, navTitle: 'Dashboard'})
   }, [])
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.inner}>
         <div className={styles.widgets}>
-          <Widget title="Total balance" amount={5240.21} icon={wallet} />
-          <Widget title="Total spending" amount={250.80} icon={wallet} />
-          <Widget title="Total saved" amount={550.25} icon={wallet2} />
+          <Widget title="Total balance" amount={5240.21} icon={walletIcon} />
+          <Widget title="Total spending" amount={250.80} icon={walletIcon} />
+          <Widget title="Total saved" amount={550.25} icon={walletIcon2} />
         </div>
         <Chart />
         <div className={styles.recent}>
@@ -58,34 +59,26 @@ const Dashboard: FC = () => {
               </tr>
             </thead>
             <tbody>
-              <Transaction
-                name='Iphone 14 Pro MAX'
-                company='Apple. Inc'
-                type='Mobile'
-                amount={1048}
-                date='19 december 2022'
-              />
-              <Transaction
-                name='Netflix Subscription'
-                company='Netflix'
-                type='Entertainment'
-                amount={100}
-                date='18 december 2022'
-              />
-              <Transaction
-                name='Figma Subscription'
-                company='Figma. Inc'
-                type='Software'
-                amount={120}
-                date='12 december 2022'
-              />
+              {
+                transactions.slice(0, 3).map(t => {
+                  return (
+                    <Transaction
+                      name={t.name}
+                      company={t.company}
+                      type={t.type}
+                      amount={t.amount}
+                      date={t.date}
+                    />
+                  )
+                })
+              }
             </tbody>
           </table>
         </div>
       </div>
       <div className={styles.side}>
         <span className={styles.side__title}>Wallet</span>
-        <Card personalNumbers={walletState[0].number} expirationDate={walletState[0].expDate} type={walletState[0].type} />
+        <Card personalNumbers={wallet[0].number} expirationDate={wallet[0].expDate} type={wallet[0].type} />
         <div className={styles.transfers}>
           <div className={styles.transfers__info}>
             <p>Scheduled Transfers</p>

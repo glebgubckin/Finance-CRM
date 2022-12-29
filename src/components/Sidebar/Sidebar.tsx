@@ -14,35 +14,35 @@ const Sidebar: FC = () => {
           className={({isActive}) => isActive ? `${styles.link} ${styles.link__active}` : styles.link} 
           to="/"
         >
-          <FiHome color='929EAE' size={20} />
+          <FiHome size={20} />
           Dashboard
         </NavLink>
         <NavLink 
           className={({isActive}) => isActive ? `${styles.link} ${styles.link__active}` : styles.link} 
           to="/transactions"
         >
-          <FiTrendingUp color='929EAE' size={20} />
+          <FiTrendingUp size={20} />
           Transactions
         </NavLink>
         <NavLink 
           className={({isActive}) => isActive ? `${styles.link} ${styles.link__active}` : styles.link} 
           to="/invoices"
         >
-          <FiBookmark color='929EAE' size={20} />
+          <FiBookmark size={20} />
           Invoices
         </NavLink>
         <NavLink 
           className={({isActive}) => isActive ? `${styles.link} ${styles.link__active}` : styles.link} 
           to="/wallets"
         >
-          <BsWallet2 color='929EAE' size={20} />
+          <BsWallet2 size={20} />
           My Wallets
         </NavLink>
         <NavLink 
           className={({isActive}) => isActive ? `${styles.link} ${styles.link__active}` : styles.link} 
           to="/settings"
         >
-          <FiSettings color='929EAE' size={20} />
+          <FiSettings size={20} />
           Settings
         </NavLink>
       </nav>

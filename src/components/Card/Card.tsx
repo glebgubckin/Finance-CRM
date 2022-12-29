@@ -9,11 +9,12 @@ interface CardProps {
   personalNumbers: string,
   expirationDate: string,
   type: 'mastercard' | 'visa'
+  className?: string,
 }
 
-const Card: FC<CardProps> = ({personalNumbers, expirationDate, type}) => {
+const Card: FC<CardProps> = ({personalNumbers, expirationDate, type, className = ''}) => {
   return (
-    <div className={styles.wrapper}>
+    <div className={`${styles.wrapper} ${className}`}>
       <div className={styles.top}>
         <span className={styles.title}>Maglo.</span>
         <div className={styles.divider}></div>

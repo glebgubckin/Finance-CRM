@@ -9,10 +9,10 @@ const Invoice: FC = () => {
   // const { id } = useParams()
 
   setTitle(`Invoice`)
-  const [appState, setAppState] = useRecoilState(appStore)
+  const [app, setApp] = useRecoilState(appStore)
   
   useEffect(() => {
-    setAppState({...appState, navTitle: `Invoice`})
+    setApp({...app, navTitle: `Invoice`})
   }, [])
 
   return (

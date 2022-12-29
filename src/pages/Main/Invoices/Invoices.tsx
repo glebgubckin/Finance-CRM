@@ -6,10 +6,10 @@ import { appStore } from '../../../stores'
 const Invoices: FC = () => {
 
   setTitle('Invoices')
-  const [appState, setAppState] = useRecoilState(appStore)
+  const [app, setApp] = useRecoilState(appStore)
 
   useEffect(() => {
-    setAppState({...appState, navTitle: `Invoices`})
+    setApp({...app, navTitle: `Invoices`})
   }, [])
 
   return (

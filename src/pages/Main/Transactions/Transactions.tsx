@@ -1,22 +1,41 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useMemo, useState } from 'react';
 import { useRecoilState } from 'recoil'
 import { setTitle } from '../../../utils/index'
-import { appStore } from '../../../stores'
+import { appStore, transactionStore } from '../../../stores'
 import styles from './transactions.module.scss'
-import transactions from './transactions.data';
 import Transaction from './components/Transaction/Transaction';
+import Search from '../../../components/Search/Search';
 
 const Transactions: FC = () => {
 
+  const [search, setSearch] = useState("")
+
   setTitle('Transactions')
-  const [appState, setAppState] = useRecoilState(appStore)
+  const [app, setApp] = useRecoilState(appStore)
+  const [transactions] = useRecoilState(transactionStore)
+
+  const searchedTransactions = useMemo(() => {
+    if (search === "") {
+      return transactions
+    }
+    return transactions.filter(t => {
+      return (
+        t.name.includes(search)
+        || t.company.includes(search)
+        || t.type.includes(search)
+        || t.amount.toString().includes(search)
+        || t.invoiceId.includes(search)
+      )
+    })
+  }, [search, transactions])
   
   useEffect(() => {
-    setAppState({...appState, navTitle: 'Transactions'})
+    setApp({...app, navTitle: 'Transactions'})
   }, [])
 
   return (
     <div className={styles.wrapper}>
+      <Search value={search} setValue={setSearch} width={350} placeholder='Search anything on Transactions' />
       <table className={styles.table}>
         <thead>
           <tr>
@@ -30,7 +49,7 @@ const Transactions: FC = () => {
         </thead>
         <tbody>
           {
-            transactions.map(t => <Transaction key={t.invoiceId} transaction={t} />)
+            searchedTransactions.map(t => <Transaction key={t.invoiceId} transaction={t} />)
           }
         </tbody>
       </table>

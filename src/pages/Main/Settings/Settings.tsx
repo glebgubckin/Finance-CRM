@@ -18,8 +18,8 @@ export interface Form {
 const Settings: FC = () => {
 
   setTitle('Settings')
-  const [appState, setAppState] = useRecoilState(appStore)
-  const [userState, setUserState] = useRecoilState(userStore)
+  const [app, setApp] = useRecoilState(appStore)
+  const [user, setUser] = useRecoilState(userStore)
 
   const [edit, setEdit] = useState(false)
 
@@ -35,14 +35,14 @@ const Settings: FC = () => {
   const update = (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()
     updateProfile(form)
-    setUserState({...form})
+    setUser({...form})
     setForm({...form, newPassword: '', confirmNewPassword: ''})
     setEdit(false)
   }
   
   useEffect(() => {
-    setAppState({...appState, navTitle: `Settings`})
-    setForm({...userState, newPassword: '', confirmNewPassword: ''})
+    setApp({...app, navTitle: `Settings`})
+    setForm({...user, newPassword: '', confirmNewPassword: ''})
   }, [])
 
   return (

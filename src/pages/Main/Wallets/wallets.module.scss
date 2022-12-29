@@ -16,6 +16,14 @@
   align-items: center;
 }
 
+.card {
+  margin-top: 30px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
 .balance {
   width: 100%;
   margin-top: 30px;
@@ -134,5 +142,62 @@
     margin-top: 30px;
     display: flex;
     flex-direction: column;
+  }
+}
+
+.modal {
+  &__title {
+    margin-bottom: 12px;
+    font-size: 28px;
+    font-weight: 600;
+    color: $font-color;
+    user-select: none;
+  }
+
+  &__row {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  &__input {
+    min-width: 360px;
+    font-size: 18px;
+    padding: 8px 12px;
+    border: 1px #cccccc solid;
+    outline: 0;
+    border-radius: 8px;
+    user-select: none;
+  }
+
+  &__select {
+    margin-top: 8px;
+    padding: 8px;
+    min-width: 360px;
+    font-size: 18px;
+    border: none;
+    outline: 0;
+  }
+
+  &__button {
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    color: $font-color;
+    background-color: $primary;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .15s all;
+
+    &:hover {
+      background-color: $secondary;
+      color: #ffffff;
+    }
   }
 }

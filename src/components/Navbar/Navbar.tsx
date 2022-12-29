@@ -7,20 +7,20 @@ import UserDropdown from '../UserDropdown/UserDropdown';
 
 const Navbar: FC = () => {
 
-  const [appState] = useRecoilState(appStore)
+  const [app] = useRecoilState(appStore)
 
   return (
     <div className={styles.wrapper}>
-      <h1 className={styles.title}>{appState.navTitle}</h1>
+      <h1 className={styles.title}>{app.navTitle}</h1>
       <div className={styles.controls}>
         <div className={styles.notifications}>
           <button className={styles.icon}>
             <FiBell color='929EAE' size={24} />
           </button>
           <div 
-            className={appState.notificationsCount > 0 ? styles.count : ''}
+            className={app.notificationsCount > 0 ? styles.count : ''}
           >
-            { appState.notificationsCount > 0 ? appState.notificationsCount : null }
+            { app.notificationsCount > 0 ? app.notificationsCount : null }
           </div>
         </div>
         <UserDropdown />
