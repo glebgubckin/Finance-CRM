@@ -9,7 +9,7 @@ import { useRecoilState } from 'recoil'
 import { setTitle } from '../../../utils/index'
 import { appStore, walletStore } from '../../../stores/'
 import { Link } from 'react-router-dom'
-import Card from './components/Card/Card'
+import Card from '../../../components/Card/Card'
 import Transfer from './components/Transfer/Transfer'
 import styles from './dashboard.module.scss'
 
@@ -85,7 +85,7 @@ const Dashboard: FC = () => {
       </div>
       <div className={styles.side}>
         <span className={styles.side__title}>Wallet</span>
-        <Card personalNumbers={walletState[0].number} expirationDate={walletState[0].expDate} />
+        <Card personalNumbers={walletState[0].number} expirationDate={walletState[0].expDate} type={walletState[0].type} />
         <div className={styles.transfers}>
           <div className={styles.transfers__info}>
             <p>Scheduled Transfers</p>

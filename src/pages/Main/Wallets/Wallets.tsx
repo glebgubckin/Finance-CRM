@@ -3,7 +3,7 @@ import { useRecoilState } from 'recoil'
 import { setTitle } from '../../../utils/index'
 import { appStore, walletStore } from '../../../stores'
 import { FiArrowUp, FiArrowDown, FiPlus } from "react-icons/fi"
-import Card from '../Dashboard/components/Card/Card'
+import Card from '../../../components/Card/Card'
 import Payments from './components/Payments/Payments'
 import styles from './wallets.module.scss'
 
@@ -33,7 +33,7 @@ const Wallets: FC = () => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.wallets}>
-        <Card personalNumbers={walletState[0].number} expirationDate={walletState[0].expDate} />
+        <Card personalNumbers={walletState[0].number} expirationDate={walletState[0].expDate} type={walletState[0].type} />
         <div className={styles.balance}>
           <div>
             <p className={styles.balance__title}>Your balance</p>

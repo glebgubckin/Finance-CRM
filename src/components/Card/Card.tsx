@@ -1,15 +1,17 @@
 import { FC } from 'react'
-import chip from '../../../../../assets/chip.svg'
-import nfc from '../../../../../assets/nfc.svg'
-import mastercard from '../../../../../assets/mastercard.svg'
+import chip from '../../assets/chip.svg'
+import nfc from '../../assets/nfc.svg'
+import mastercard from '../../assets/mastercard.svg'
+import visa from '../../assets/visa.svg'
 import styles from './card.module.scss'
 
 interface CardProps {
   personalNumbers: string,
-  expirationDate: string
+  expirationDate: string,
+  type: 'mastercard' | 'visa'
 }
 
-const Card: FC<CardProps> = ({personalNumbers, expirationDate}) => {
+const Card: FC<CardProps> = ({personalNumbers, expirationDate, type}) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.top}>
@@ -25,7 +27,7 @@ const Card: FC<CardProps> = ({personalNumbers, expirationDate}) => {
         <p className={styles.numbers}>{personalNumbers}</p>
         <div className={styles.info__data}>
           <p className={styles.expDate}>{expirationDate}</p>
-          <img src={mastercard} alt="mastercard" />
+          <img src={type === 'mastercard' ? mastercard : visa} alt={type === 'mastercard' ? 'mastercard' : 'visa'} />
         </div>
       </div>
     </div>
