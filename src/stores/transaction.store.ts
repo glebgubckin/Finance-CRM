@@ -1,6 +1,6 @@
 import { atom } from 'recoil'
 
-export interface ITransactions {
+export interface ITransaction {
   name: string,
   company: string,
   type: string,
@@ -22,7 +22,7 @@ const transactionStore = atom({
     { name: 'Iphone 13 Pro MAX', company: 'Apple. Inc', type: 'Mobile', amount: 1032, date: '19 Dec 2022', invoiceId: 'MGL0127749' },
     { name: 'Iphone 13 Pro MAX', company: 'Apple. Inc', type: 'Mobile', amount: 1032, date: '19 Dec 2022', invoiceId: 'MGL0124465' },
     { name: 'Iphone 13 Pro MAX', company: 'Apple. Inc', type: 'Mobile', amount: 1032, date: '19 Dec 2022', invoiceId: 'MGL0124789' }
-  ] as ITransactions[]
+  ] as ITransaction[]
 })
 
 export default transactionStore

@@ -1,6 +1,6 @@
 import { atom } from "recoil"
 
-interface IAppStore {
+interface IApp {
   darkMode: boolean,
   navTitle: string,
   notificationsCount: number
@@ -12,7 +12,7 @@ const appStore = atom({
     darkMode: false,
     navTitle: 'Dashboard',
     notificationsCount: 0
-  } as IAppStore
+  } as IApp
 })
 
 export default appStore 

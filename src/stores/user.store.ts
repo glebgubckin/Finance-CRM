@@ -1,6 +1,6 @@
 import { atom } from "recoil"
 
-interface IUserStore {
+interface IUser {
   firstName: string,
   lastName: string,
   email: string,
@@ -8,7 +8,7 @@ interface IUserStore {
 }
 
 const user: string | null = localStorage.getItem('user')
-const currentUser: IUserStore = user ? JSON.parse(user) : {}
+const currentUser: IUser = user ? JSON.parse(user) : {}
 
 const userStore = atom({
   key: 'userStore',
@@ -17,7 +17,7 @@ const userStore = atom({
     lastName: currentUser.lastName,
     email: currentUser.email,
     phone: currentUser.phone
-  } as IUserStore
+  } as IUser
 })
 
 export default userStore

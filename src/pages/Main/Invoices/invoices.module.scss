@@ -1,0 +1,156 @@
+@import '../../../styles/var';
+
+.wrapper {
+  padding: 0 40px 40px 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__row {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.create {
+  margin-right: 30px;
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  color: $font-color;
+  background-color: $primary;
+  border-radius: 8px;
+  border: none;
+  outline: 0;
+  user-select: none;
+  cursor: pointer;
+  transition: .15s all;
+
+  & > svg {
+    margin-right: 8px;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: $secondary;
+  }
+}
+
+.filter {
+  padding: 16px 28px;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: 1px #F5F5F5 solid;
+  border-radius: 8px;
+  color: $font-color;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .15s all;
+
+  & > svg {
+    margin-right: 8px;
+  }
+
+  &:hover {
+    background-color: #F8F8F8;
+  }
+}
+
+.table {
+  margin-top: 40px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+
+  & > thead > tr > th {
+    text-align: left;
+    color: #929EAE;
+  }
+
+  & > tbody > tr {
+    vertical-align: middle;
+    border-bottom: 1px #F5F5F5 solid;
+  }
+
+  & > tbody > tr > td {
+    padding-bottom: 20px;
+  }
+
+  &__title, &__date {
+    font-size: 20px;
+    font-weight: 600;
+    color: $font-color;
+  }
+
+  &__id {
+    margin-top: 4px;
+    font-size: 18px;
+    color: #78778B;
+  }
+
+  &__type {
+    font-size: 20px;
+    font-weight: 600;
+    color: #78778B;
+  }
+
+  &__amount {
+    font-size: 20px;
+    font-weight: 700;
+    color: $font-color;
+  }
+
+  &__status {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__action {
+    background: none;
+    border: none;
+    outline: 0;
+    cursor: pointer;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    transition: .15s all;
+
+    &__show {
+      opacity: 1;
+      pointer-events: all;
+    }
+  }
+
+  &__toAction {
+    width: 250px;
+    padding: 12px 16px;
+    margin-bottom: 10px;
+    background: #ffffff;
+    border: 1px #F5F5F5 solid;
+    border-radius: 8px;
+    font-size: 20px;
+    text-align-last: left;
+    cursor: pointer;
+    transition: .15s all;
+
+    &:hover {
+      background-color: $primary;
+    }
+  }
+}

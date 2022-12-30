@@ -9,10 +9,10 @@
 .table {
   margin-top: 40px;
   width: 100%;
-  max-width: 1440px;
+  border-collapse: collapse;
+  table-layout: fixed;
 
   & > thead > tr {
-    font-size: 18px;
     color: #929EAE;
   }
 }
