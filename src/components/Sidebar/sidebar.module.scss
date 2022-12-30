@@ -46,3 +46,34 @@
     }
   }
 }
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
+@media screen and (max-width: 960px) {
+  .wrapper {
+    width: auto;
+    align-items: center;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .nav__mobile {
+    display: none;
+  }
+
+  .link > svg {
+    margin-right: 0;
+  }
+}
