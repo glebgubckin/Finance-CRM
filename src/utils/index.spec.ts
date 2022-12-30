@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest'
 import { convertMoney } from './convertMoney'
-import { updateValidate } from './profile'
+import { updateValidate } from './profile.utils'
 
 describe('Convert Money Function', () => {
   test('positive integer', () => {

@@ -14,7 +14,7 @@ const UserDropdown: FC = () => {
     <div className={styles.wrapper}>
       <div onClick={() => setOpen(!open)} className={styles.top}>
         <img src={userImg} alt="user" width={36} height={36} />
-        <span>{`${user.firstName} ${user.lastName}`}</span>
+        <span>Welcome, {user.firstName}</span>
         <button className={open ? `${styles.drop} ${styles.drop__active}` : styles.drop}>
           <FiChevronDown color='1B212D' size={20} />
         </button>

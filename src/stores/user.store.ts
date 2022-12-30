@@ -8,7 +8,12 @@ interface IUser {
 }
 
 const user: string | null = localStorage.getItem('user')
-const currentUser: IUser = user ? JSON.parse(user) : {}
+const currentUser: IUser = user ? JSON.parse(user) : {
+  firstName: '',
+  lastName: '',
+  email: '',
+  phone: ''
+}
 
 const userStore = atom({
   key: 'userStore',

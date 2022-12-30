@@ -1,5 +1,5 @@
-import { updateProfile, updateValidate } from './profile'
-import { currentDate, currentMonth } from './chartsData'
+import { updateProfile, updateValidate } from './profile.utils'
+import { currentDate, currentMonth } from './charts.utils'
 import { convertMoney } from './convertMoney'
 import { convertCardNumber } from './card.utils'
 

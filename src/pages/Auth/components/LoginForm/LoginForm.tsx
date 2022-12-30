@@ -1,5 +1,8 @@
-import { FC, useRef, useState, ChangeEvent } from 'react'
+import { FC, useRef, useState, ChangeEvent, MouseEvent } from 'react'
 // import { FiCheck } from "react-icons/fi"
+import { userStore } from '../../../../stores'
+import { useRecoilState } from 'recoil'
+import { useNavigate } from 'react-router-dom'
 import styles from '../form.module.scss'
 
 interface ILoggingUser {
@@ -11,10 +14,28 @@ const LoginForm: FC = () => {
 
   const remember = useRef<HTMLInputElement>(null)
 
+  // const navigate = useNavigate()
+
+  const [user, setUser] = useRecoilState(userStore)
+
   const [loggingUser, setLoggingUser] = useState<ILoggingUser>({
     email: '',
     password: ''
   })
+
+  const login = (e: MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    const userData = {
+      firstName: '',
+      lastName: '',
+      email: loggingUser.email,
+      phone: ''
+    }
+    localStorage.setItem('user', JSON.stringify(userData))
+    setUser({...userData})
+    //! Replace with navigate from react router
+    window.location.pathname = '/'
+  }
 
   return (
     <div className={styles.wrapper}>
@@ -24,7 +45,6 @@ const LoginForm: FC = () => {
         <label className={styles.form__label}>Email</label>
         <input 
           className={styles.form__input}
-          placeholder="Enter your email"
           type="email"
           value={loggingUser.email}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setLoggingUser({...loggingUser, email: e.target.value})}
@@ -49,7 +69,10 @@ const LoginForm: FC = () => {
         </div>
         <a href="#">Forgot password</a>
       </div>
-      <button className={styles.btn}>Sign In</button>
+      <button onClick={(e: MouseEvent<HTMLButtonElement>) => login(e)} className={styles.btn}>Sign In</button>
+      <p className={styles.redirect}>
+        Does not have account? <a href="register">Sign up now!</a>
+      </p>
     </div>
   )
 }
