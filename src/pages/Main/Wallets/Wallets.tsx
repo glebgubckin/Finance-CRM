@@ -1,14 +1,15 @@
 import { FC, MouseEvent, useEffect, useState, Fragment, ChangeEvent } from 'react'
 import { useRecoilState } from 'recoil'
+import { toast, ToastContainer } from 'react-toastify'
 import { setTitle } from '../../../utils/index'
 import { appStore, walletStore } from '../../../stores'
 import { payments, upcomingPayments } from './wallets.data'
 import { FiArrowUp, FiArrowDown, FiPlus } from "react-icons/fi"
 import Card from '../../../components/Card/Card'
 import Payments from './components/Payments/Payments'
-import styles from './wallets.module.scss'
 import Modal from '../../../components/Modal/Modal'
-import { convertCardNumber } from '../../../utils/card.utils';
+import { convertCardNumber } from '../../../utils/card.utils'
+import styles from './wallets.module.scss'
 
 interface INewCard {
   cardNumber: string,
@@ -50,6 +51,15 @@ const Wallets: FC = () => {
       type: 'mastercard'
     })
     setModal(false)
+    toast.success('Success! Card has been added', {
+      position: "bottom-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      progress: undefined,
+      theme: "light",
+    })
   }
   
   useEffect(() => {
@@ -71,6 +81,10 @@ const Wallets: FC = () => {
                     />
             })
           }
+          <button className={styles.addCard} onClick={() => setModal(true)}>
+            <FiPlus />
+            Add New Card
+          </button>
           <div className={styles.balance}>
             <div>
               <p className={styles.balance__title}>Your balance</p>
@@ -95,10 +109,6 @@ const Wallets: FC = () => {
               </div>
             </div>
           </div>
-          <button className={styles.addCard} onClick={() => setModal(true)}>
-            <FiPlus />
-            Add New Card
-          </button>
         </div>
         <div className={styles.payments}>
           <p className={styles.payments__title}>My Payments</p>
@@ -144,15 +154,16 @@ const Wallets: FC = () => {
               <option value="mastercard">Mastercard</option>
               <option value="visa">Visa</option>
             </select>
-          </div>
           <button
             className={styles.modal__button}
             onClick={(e: MouseEvent<HTMLButtonElement>) => addCard(e)}
           >
               Add
             </button>
+          </div>
         </Modal>
       </div>
+      <ToastContainer />
     </>
   )
 }
