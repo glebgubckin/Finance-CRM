@@ -99,10 +99,10 @@ const Invoices: FC = () => {
                   <td className={styles.table__status}>
                     <Status status={i.status} />
                   </td>
-                  <td style={{position: 'relative'}} onMouseLeave={() => setDropdownId("")}>
+                  <td style={{position: 'relative'}}>
                     <button
                       className={styles.table__action}
-                      onMouseEnter={() => setDropdownId(i.invoiceID)}
+                      onClick={() => setDropdownId(dropdownId === "" ? i.invoiceID : "")}
                     >
                       <FiMoreHorizontal size={24} color='29A073' />
                     </button>

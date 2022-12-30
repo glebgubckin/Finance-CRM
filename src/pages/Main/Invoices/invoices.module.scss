@@ -129,7 +129,7 @@
     position: absolute;
     pointer-events: none;
     opacity: 0;
-    transition: .15s all;
+    transition: .1s;
 
     &__show {
       opacity: 1;
