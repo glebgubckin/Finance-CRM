@@ -1,9 +1,9 @@
 import { FC } from 'react'
-import { ITransactions } from '../../../../../stores/transaction.store'
+import { ITransaction } from '../../../../../stores/transaction.store'
 import { convertMoney } from '../../../../../utils'
 import styles from './transaction.module.scss'
 
-const Transaction: FC<{transaction: ITransactions}> = ({transaction}) => {
+const Transaction: FC<{transaction: ITransaction}> = ({transaction}) => {
   return (
     <tr>
       <td className={styles.column}>
