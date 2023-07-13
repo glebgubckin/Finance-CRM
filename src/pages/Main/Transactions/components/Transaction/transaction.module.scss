@@ -1,0 +1,60 @@
+@import '../../../../../styles/var';
+
+td {
+  padding: 20px 0 0 0;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title, .date {
+  font-size: 20px;
+  font-weight: 600;
+  color: $font-color;
+}
+
+.company {
+  margin-top: 4px;
+  font-size: 18px;
+  color: #78778B;
+}
+
+.type {
+  font-size: 20px;
+  font-weight: 600;
+  color: #78778B;
+}
+
+.amount {
+  font-size: 20px;
+  font-weight: 700;
+  color: $font-color;
+}
+
+.id {
+  font-size: 20px;
+  font-weight: 500;
+  color: #78778B;
+}
+
+.view {
+  padding: 16px 28px;
+  font-size: 20px;
+  font-weight: 600;
+  color: $font-color;
+  background-color: $primary;
+  border-radius: 8px;
+  border: none;
+  outline: 0;
+  user-select: none;
+  cursor: pointer;
+  transition: .15s all;
+
+  &:hover {
+    color: #ffffff;
+    background-color: $secondary;
+  }
+}

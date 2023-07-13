@@ -1,0 +1,79 @@
+@import '../../styles/var';
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 32px 24px;
+  width: 100%;
+  max-width: 250px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #FAFAFA;
+  overflow: hidden;
+}
+
+.nav {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.link {
+  width: 100%;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  font-size: 20px;
+  color: #929EAE;
+  text-decoration: none;
+  transition: .15s all;
+
+  &__active {
+    background-color: $primary;
+    color: $font-color;
+  }
+
+  & > svg {
+    margin-right: 12px;
+
+    &:hover {
+      color: $font-color;
+    }
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
+@media screen and (max-width: 960px) {
+  .wrapper {
+    width: auto;
+    align-items: center;
+  }
+
+  .mobile {
+    display: block;
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .nav__mobile {
+    display: none;
+  }
+
+  .link > svg {
+    margin-right: 0;
+  }
+}

@@ -1,0 +1,32 @@
+@import '../../../../../styles/var';
+
+.payment {
+  margin-top: 24px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 600;
+    color: $font-color;
+  }
+
+  &__subtitle {
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #929EAE;
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 600;
+    color: $font-color;
+  }
+}

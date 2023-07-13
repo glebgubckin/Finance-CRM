@@ -1,0 +1,90 @@
+@import '../../../styles/var';
+
+.wrapper {
+  padding: 0 40px 40px 40px;
+  width: 100%;
+  max-width: 960px;
+
+  & > h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: $font-color;
+  }
+
+  .subtitle {
+    margin-top: 4px;
+    font-size: 16px;
+    color: #929EAE;
+  }
+
+  .controls {
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  
+    & > h2 {
+      font-size: 22px;
+      font-weight: 600;
+      color: $font-color;
+    }
+  }
+
+  .edit {
+    background: none;
+    outline: 0;
+    border: none;
+    color: $secondary;
+    font-size: 20px;
+    display: flex;
+    align-items: flex-end;
+    cursor: pointer;
+    transition: .2s;
+
+    &:hover {
+      transform: scale(101%);
+    }
+
+    & > svg {
+      margin-right: 8px;
+    }
+  }
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 40px;
+  row-gap: 20px;
+}
+
+.update {
+  margin-top: 40px;
+  padding: 20px 64px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  background-color: $secondary;
+  cursor: pointer;
+  transition: .15s;
+
+  &:disabled {
+    color: #f7f7f7;
+    background-color: #dddddd;
+    cursor: default;
+
+    &:hover {
+      color: #f7f7f7;
+      background-color: #dddddd;
+    }
+  }
+
+  &:hover {
+    background-color: $primary;
+    color: $font-color;
+  }
+}

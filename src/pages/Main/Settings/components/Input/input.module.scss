@@ -1,0 +1,44 @@
+@import '../../../../../styles/var';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 500;
+  color: $font-color;
+}
+
+.input {
+  width: 420px;
+  margin-top: 8px;
+  padding: 16px 24px;
+  color: #78778B;
+  border: 1px #cacaca solid;
+  border-radius: 12px;
+  outline: 0;
+  font-size: 16px;
+  font-weight: 500;
+
+  &:disabled {
+    color: #cccccc;
+  }
+}
+
+.row {
+  position: relative;
+}
+
+.passBtn {
+  position: absolute;
+  background-color: #ffffff;
+  border: none;
+  outline: 0;
+  top: 60%;
+  right: 10px; 
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}

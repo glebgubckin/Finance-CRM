@@ -1,0 +1,75 @@
+@import '../../styles/var';
+
+.wrapper {
+  position: relative;
+  margin-left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  padding: 8px;
+  background-color: #FAFAFA;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  & > span {
+    font-weight: 600;
+    margin-left: 12px;
+    color: $font-color;
+    user-select: none;
+  }
+}
+
+.drop {
+  margin-left: 28px;
+  background: none;
+  outline: 0;
+  border: none;
+  cursor: pointer;
+  transition: .2s all;
+
+  &__active {
+    transform: rotate(180deg)
+  }
+}
+
+.bottom {
+  padding: 8px;
+  width: 100%;
+  position: absolute;
+  margin-top: 50px;
+  background-color: #FAFAFA;
+  border-radius: 12px;
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+  transition: .2s;
+
+  &__active {
+    pointer-events: all;
+    margin-top: 60px;
+    opacity: 1;
+  }
+}
+
+.switch {
+  padding: 12px 0;
+  width: 100%;
+  background-color: $primary;
+  border: none;
+  border-radius: 24px;
+  outline: 0;
+  color: $font-color;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: .15s all;
+
+  &:hover {
+    color: #ffffff;
+    background-color: $secondary;
+  }
+}
